@@ -17,18 +17,15 @@ class Solution {
     
  
     public int sumOfLeftLeaves(TreeNode root) {
-        return traverse(root, 0, "root");
+        return traverse(root, 0, false);
     }
     
-    private int traverse(TreeNode root, int sum, String side) {
+    private int traverse(TreeNode root, int sum, boolean isLeft) {
         if(root == null) return 0;
-        if(root.left == null && root.right == null && side.equals("left")){
+        if(root.left == null && root.right == null && isLeft){
            return root.val;
         } 
-        int left =  traverse(root.left, sum, "left");
-        int right =  traverse(root.right, sum, "right");
-        
-     
-        return left+right;
+        return traverse(root.left, sum, true) + traverse(root.right, sum, false);
+ 
     }
 }
