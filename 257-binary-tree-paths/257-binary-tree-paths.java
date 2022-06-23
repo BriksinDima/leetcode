@@ -28,7 +28,6 @@ class Solution {
 		}
 		else if(root.right == null) path(root.left, curr + "->", res);
 		else if(root.left == null) path(root.right, curr + "->", res);
-		else if(root.right == null) path(root.left, curr + "->", res);
 		else{
 			path(root.left, curr + "->", res);
 			path(root.right, curr + "->", res);
