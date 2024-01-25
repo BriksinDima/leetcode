@@ -9,18 +9,13 @@ class Solution:
         def helper(node_left, node_right):
             if not node_left and not node_right:
                 return True
-            if not node_left:
-                return False
-            if not node_right:
+            if not node_left or not node_right:
                 return False
             
+            return (node_left.val == node_right.val 
+                    and helper(node_left.right, node_right.left) 
+                    and helper(node_left.left, node_right.right))
            
-            
-            
-            if node_left.val == node_right.val:
-                return True and  helper(node_left.right, node_right.left) and helper(node_left.left, node_right.right)
-            else:
-                return False
         return helper(root.left, root.right)
             
             
