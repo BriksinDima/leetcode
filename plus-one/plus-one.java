@@ -20,8 +20,6 @@ class Solution {
             }  else {
                 digits[i] = newSum;
             }
-            
-                // do carry and in the if carry >  0 then extend array + 1 and copy all digits
         }
         
         if(carry == 1) {
